@@ -229,7 +229,7 @@ public function apiIndex(Request $request)
 
 <img width="628" height="67" alt="image" src="https://github.com/user-attachments/assets/a96d210a-4706-4026-86d4-a99cc79cba44" />
 
-# Now Adding Price shorting , id’s sorting and date sorting for high to low and low to high
+# Now Adding Price shorting , id’s shorting  in high to low and low to high and date filter for today , week and month .
 
 
 # Update api index method :
