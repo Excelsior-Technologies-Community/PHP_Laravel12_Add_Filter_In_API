@@ -9,13 +9,28 @@ use App\Http\Controllers\ProductController;
 // ============================================================
 
 // Get products with filters, sorting and pagination
-Route::get('/products', [ProductController::class, 'apiIndex']);
+Route::get(
+    '/products',
+    [ProductController::class, 'apiIndex']
+);
 
 // API documentation
-Route::get('/products/docs', [ProductController::class, 'apiDocs']);
+Route::get(
+    '/products/docs',
+    [ProductController::class, 'apiDocs']
+);
+
+// Product statistics
+Route::get(
+    '/products/statistics',
+    [ProductController::class, 'statistics']
+);
 
 // Live search
-Route::get('/products/search', [ProductController::class, 'apiSearch']);
+Route::get(
+    '/products/search',
+    [ProductController::class, 'apiSearch']
+);
 
 // Search history
 Route::get(
@@ -27,6 +42,34 @@ Route::post(
     '/products/search/history',
     [ProductController::class, 'apiSearchHistory']
 );
+
+
+// ============================================================
+// NEW PRODUCT MANAGEMENT ROUTES
+// ============================================================
+
+// Update stock
+Route::patch(
+    '/products/{id}/stock',
+    [ProductController::class, 'updateStock']
+);
+
+// Toggle active/inactive
+Route::patch(
+    '/products/{id}/status',
+    [ProductController::class, 'toggleStatus']
+);
+
+// Toggle featured
+Route::patch(
+    '/products/{id}/featured',
+    [ProductController::class, 'toggleFeatured']
+);
+
+
+// ============================================================
+// CRUD
+// ============================================================
 
 // Create product
 Route::post(
